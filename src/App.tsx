@@ -1,13 +1,18 @@
-import React, {createElement as e} from 'react';
+import {Route, Routes} from 'react-router-dom'
+import { Navigation } from './components/navigation';
+import { AboutPage } from './pages/aboutPage';
+import { ProductPage } from './pages/productPage';
 
 function App() {
-  // return (
-  //   <h1>Hello React</h1>
-  // );
-  return e('div', {className: 'container'}, [
-    e('h1', {className:'font-bold', key: 1}, 'Test JSX'),
-    e('button', {className: '', key: 2}, 'Click me!')
-  ])
+  return(
+    <>
+      <Navigation/>
+      <Routes>
+        <Route path='/' element={<ProductPage/>}/>
+        <Route path='/about' element={<AboutPage/>}/>
+      </Routes>
+    </>
+  )
 }
 
 export default App;
